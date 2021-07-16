@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title></title>
+</head>  
+<body>
+<nav class="navbar navbar-dark bg-dark py-3 d-flex justify-content-center">
+    <a class="navbar-brand" href="#">
+    <img src="https://img.icons8.com/ios/452/co2.png" width="80" height="60" class="d-inline-block align-top">
+    <h1 class="d-inline-block align-top">CO2 Emissions by Country</h1>
+    </a>
+</nav>
+<table class="table table-responsive fixed-table-body table-sm pt-5" style = "margin: auto; width: 30%;">
+   <thead class = "thead-dark">
+   <tr> 
+    <th>Year</th>
+    <th>Country</th>
+    <th>Total</th>
+   </tr>
+   </thead>  
+   <tr th:each="fuelStat : ${fuelStats}" class="table-secondary">
+        <td th:text="${fuelStat.year}"></td>
+        <td th:text="${fuelStat.country}"></td>
+        <td th:text="${fuelStat.total}"></td>
+   </tr>
+</table>
+
+</body>  
+</html>
